@@ -2,7 +2,7 @@
 ###Getting Started (a short guide to a Drupal/GitHub development workflow)
 
 #####Obtaining a copy of the repository
-Create a local directory for the project. Make sure this directory is a child of another directory that specifies its environment; for example, when planning to pull the `dev branch` you could create a folder called `dev` in your web root, to which the project folder `sand-box` could be a child. Do this within your preferred UI, or by issuing the following commands.
+Create a local directory for the project. It is a good practice to make this directory a child of another directory that specifies an environment; for example, when planning to pull the `dev branch` you could create a folder called `dev` in your web root, to which the project folder `sand-box` could be a child. Do this within your preferred UI, or by issuing the following commands.
  
 Replace `/web/root/` with your webroot
 
