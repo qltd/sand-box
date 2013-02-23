@@ -40,7 +40,8 @@ Grant a user by the name of 'sand_box_user' the permissions required by Drupal. 
 - replace 'password'
 
 <pre>
-GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, LOCK TABLES, CREATE TEMPORARY TABLES ON `sand_box_dev`.* TO 'sand_box_user'@'localhost' IDENTIFIED BY 'password';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, LOCK TABLES, CREATE TEMPORARY TABLES 
+ON `sand_box_dev`.* TO 'sand_box_user'@'localhost' IDENTIFIED BY 'password';
 
 FLUSH PRIVILEGES;
 </pre>
