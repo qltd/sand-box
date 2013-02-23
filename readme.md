@@ -71,12 +71,14 @@ chmod 755 sites/default
 
 Two guiding principles for data migration:
 
-1. Non-test content should always be added to the 'live', or most live-like, version of the site that currently exists. At Q, this means most content should be added to 'test', at least until we go live or place something on a production server.
+1. Non-test content should always be added to the 'live', or most live-like, version of the site that currently exists.
 2. Content should migrate downstream, from 'live' to 'test' to 'dev'; or from 'test' to 'dev' if 'live' does not yet exist.
 
 With that in mind, we can download a copy of the most live-like database from 'test' by visiting the following URL and clicking 'Backup now'.
 
-- The default options should be selected (Backup from Default Database to Download using Default Settings)
+- Select the following options: Backup from Default Database to Manual Backups Directory using Default Settings
+- Download the backup by clicking the 'download' link in the Drupal alert message
+- You can simply download the backup if you choose, but an abundance of stored backups is never a bad idea
 
 <pre>
 http://sand-box.qltdclient.com/admin/config/system/backup_migrate
