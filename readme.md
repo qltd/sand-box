@@ -5,6 +5,7 @@
 Create a local directory for the project. Make sure this directory is a child of another directory that specifies its environment; for example, you could create a folder called 'dev' in your web root, within which the project folder 'sand-box' could live while in correspondence to the 'dev' branch on GitHub. Do this within your preferred UI, or by issuing the following commands.
  
 - replace '/web/root/' with your webroot
+
 <pre>
 cd /web/root/
 mkdir -p dev/sand-box
@@ -23,18 +24,21 @@ That's it. Now you have local copy of the 'dev' branch. Note that you could chan
 Create a local dev database with phpMyAdmin or by issuing the following command.
 
 - replace 'username' with the username of a local MySQL admin account
+
 <pre>
 mysqladmin -u username -p create sand_box_dev
 </pre>
 If you are not using phpMyAdmin, log in to MySQL 
 
 - replace 'username' with the username of a local MySQL admin account
+
 <pre>
 mysql -u username -p
 </pre>
 Grant a user by the name of 'sand_box_user' the permissions required by Drupal. Use phpMyAdmin, or the following command while logged into a MySQL admin account. Note that the mixed use of both ' and ` is deliberate and should not be modified.
 
 - replace 'password'
+
 <pre>
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, LOCK TABLES, CREATE TEMPORARY TABLES ON `sand_box_dev`.* TO 'sand_box_user'@'localhost' IDENTIFIED BY 'password';
 
