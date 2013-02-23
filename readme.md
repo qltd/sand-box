@@ -102,7 +102,20 @@ Replace `localhost/dev/sand-box` with the correct URL for your dev site
 http://localhost/dev/sand-box/admin/config/system/backup_migrate/restore
 ```
 
+If there are additional files associated with the content that is being migrated downstream, that content will need to be copied separately. It is common to use a script for this task.
+
+```
+<?php
+
+// I will create a script, and add its contents here
+// Before that happens, I want to introduce authorized 
+// ssh keys in a future subsection of this document
+
+?>
+```
+
 #####Staying Current
+
 Pull
 
 ```
