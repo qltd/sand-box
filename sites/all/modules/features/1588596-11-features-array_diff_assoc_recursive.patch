@@ -1,0 +1,71 @@
+From fb11b1213ca573706aeede80e780eb2072a6aaeb Mon Sep 17 00:00:00 2001
+From: Pieter Frenssen <pieter@frenssen.be>
+Date: Mon, 31 Dec 2012 12:31:09 +0100
+Subject: [PATCH] Issue #1588596 by pfrenssen: Recursively compute the
+ difference between arrays.
+
+---
+ features.export.inc |  2 +-
+ features.module     | 36 ++++++++++++++++++++++++++++++++++++
+ 2 files changed, 37 insertions(+), 1 deletion(-)
+
+diff --git a/features.export.inc b/features.export.inc
+index b6e338a..bfc993a 100644
+--- a/features.export.inc
++++ b/features.export.inc
+@@ -187,7 +187,7 @@ function features_export_prepare($export, $module_name, $reset = FALSE) {
+     }
+   }
+ 
+-  $export = array_diff_assoc($export, $standard_info);
++  $export = features_array_diff_assoc_recursive($export, $standard_info);
+   ksort($export);
+   return array_merge($standard_info, $export);
+ }
+diff --git a/features.module b/features.module
+index 6aeb2d7..3d29755 100644
+--- a/features.module
++++ b/features.module
+@@ -940,3 +940,39 @@ function features_hook_info() {
+   );
+   return array_fill_keys($hooks, array('group' => 'features'));
+ }
++
++/**
++ * Recursively computes the difference of arrays with additional index check.
++ *
++ * This is a version of array_diff_assoc() that supports multidimensional
++ * arrays.
++ *
++ * @param array $array1
++ *   The array to compare from.
++ * @param array $array2
++ *   The array to compare to.
++ *
++ * @return array
++ *   Returns an array containing all the values from array1 that are not present
++ *   in array2.
++ */
++function features_array_diff_assoc_recursive(array $array1, array $array2) {
++  $difference = array();
++  foreach ($array1 as $key => $value) {
++    if (is_array($value)) {
++      if (!isset($array2[$key]) || !is_array($array2[$key])) {
++        $difference[$key] = $value;
++      }
++      else {
++        $new_diff = features_array_diff_assoc_recursive($value, $array2[$key]);
++        if (!empty($new_diff)) {
++          $difference[$key] = $new_diff;
++        }
++      }
++    }
++    elseif (!isset($array2[$key]) || $array2[$key] != $value) {
++      $difference[$key] = $value;
++    }
++  }
++  return $difference;
++}
+-- 
+1.8.0.3
+
