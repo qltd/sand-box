@@ -13,7 +13,7 @@ mkdir -p dev/sand-box
 
 If you do not have permission to write in your web root, but you do have sudo access, issue the following commands instead of `mkdir -p dev/sand-box`.
 
-Replace `user` and `group` with your username; if you don't want to specify a group, you can omit `:group` from the `user:group` syntax
+Replace `user` and `group` with your system username and group; if you don't want to specify a group, you can omit `:group` from the `user:group` syntax
 
 ```
 sudo mkdir -p dev/sand-box
