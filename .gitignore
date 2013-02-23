@@ -3,4 +3,4 @@ sites/*/settings*.php
 
 # Ignore paths that contain user-generated content.
 sites/*/files
-# sites/*/private ## database backups are stored within this directory
+sites/*/private
