@@ -71,9 +71,8 @@ chmod 755 sites/default
 
 Two guiding principles for data migration:
 
-1. Non-test content should always be added to the 'live', or most live-like, version of the site that currently exists. At Q, this means most content should be added to 'test', at least until we go live, or place something on a production server.
-
-2. Content should migrate downstream, from 'live' to 'test' to 'dev'; or if live does not yet exist, from 'test' to 'dev'.
+1. Non-test content should always be added to the 'live', or most live-like, version of the site that currently exists. At Q, this means most content should be added to 'test', at least until we go live or place something on a production server.
+2. Content should migrate downstream, from 'live' to 'test' to 'dev'; or from 'test' to 'dev' if 'live' does not yet exist.
 
 With that in mind, we can download a copy of the most live-like database from 'test' by visiting the following URL and clicking 'Backup now'.
 
