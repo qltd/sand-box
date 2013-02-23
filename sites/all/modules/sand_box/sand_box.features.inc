@@ -17,6 +17,14 @@ function sand_box_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'video_game_consoles' => array(
+      'name' => t('Video Game Consoles'),
+      'base' => 'node_content',
+      'description' => t('Information about video game consoles.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   return $items;
 }
