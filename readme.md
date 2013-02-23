@@ -69,20 +69,44 @@ chmod 755 sites/default
 
 #####Pulling the latest copy of the database downstream from 'test' or 'live'
 
-Will create:
+Two guiding principles for data migration:
 
-- User:	admin
-- Pass:	qltd109
+1. Non-test content should always be added to the 'live', or most live-like, version of the site that currently exists. At Q, this means most content should be added to 'test', at least until we go live, or place something on a production server.
+
+2. Content should migrate downstream, from 'live' to 'test' to 'dev'; or if live does not yet exist, from 'test' to 'dev'.
+
+With that in mind, we can download a copy of the most live-like database from 'test' by visiting the following URL and clicking 'Backup now'.
+
+- The default options should be selected (Backup from Default Database to Download using Default Settings)
+
+<pre>
+http://sand-box.qltdclient.com/admin/config/system/backup_migrate
+</pre>
+
+Now we can migrate data by uploading the file we just downloaded to our development environment at the following URL.
+
+- Replace 'localhost/dev/sand-box' with the correct URL for your dev site
+
+<pre>
+http://localhost/dev/sand-box/admin/config/system/backup_migrate/restore
+</pre>
+
+#####Staying Current
+Pull
+<pre>
+git pull origin dev
+</pre>
 
 #####Pushing features upstream
 
+…
 
+###Additional Considerations
 
+- Global Admin Account Information
 
-
-
-
-
-####Considerations
+	- User:		admin
+	
+	- Pass:		qltd109
 
 - Site images should be stored in the selected theme's subdirectory. Anything stored in '/sites/default/files' will be ignored during git transactions (per '.gitignore')
