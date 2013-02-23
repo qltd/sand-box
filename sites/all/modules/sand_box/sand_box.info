@@ -1,0 +1,11 @@
+name = sand-box
+description = The main feature module for the sand-box app
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = sand_box
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:1
+features[field][] = node-linux_distributions-body
+features[node][] = linux_distributions
