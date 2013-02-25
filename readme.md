@@ -4,7 +4,7 @@
 #####Obtaining a copy of the repository
 Create a local directory for the project. It is a good practice to make this directory a child of another directory that specifies an environment; for example, when planning to pull the `dev branch` you could create a folder called `dev` in your web root, to which the project folder `sand-box` could be a child. Do this within your preferred UI, or by issuing the following commands.
  
-Replace `/web/root/` with your webroot
+(Replace `/web/root/` with your webroot)
 
 ```
 cd /web/root/
@@ -13,7 +13,7 @@ mkdir -p dev/sand-box
 
 If you do not have permission to write in your web root, but you do have sudo access, issue the following commands instead of `mkdir -p dev/sand-box`.
 
-Replace `user` and `group` with your system username and group; if you don't want to specify a group, you can omit `:group` from the `user:group` syntax
+(Replace `user` and `group` with your system username and group; if you don't want to specify a group, you can omit `:group` from the `user:group` syntax)
 
 ```
 sudo mkdir -p dev/sand-box
@@ -42,21 +42,21 @@ sudo ln -s /Applications/MAMP/Library/bin/mysqladmin /bin/mysqladmin
 
 Create a local `dev database` with phpMyAdmin or by issuing the following command.
 
-Replace `username` with the username of a local MySQL admin account
+(Replace `username` with the username of a local MySQL admin account)
 
 ```
 mysqladmin -u username -p create sand_box_dev
 ```
 If you are not using phpMyAdmin, log in to MySQL 
 
-Replace `username` with the username of a local MySQL admin account
+(Replace `username` with the username of a local MySQL admin account)
 
 ```
 mysql -u username -p
 ```
 Grant a user by the name of `sand_box_user` the permissions required by Drupal. Use phpMyAdmin, or the following command while logged into a MySQL admin account. Note that the mixed use of both ' and ` is deliberate and should not be modified.
 
-Replace `password`
+(Replace `password`)
 
 ```
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, LOCK TABLES, CREATE TEMPORARY TABLES 
@@ -112,7 +112,7 @@ http://sand-box.qltdclient.com/admin/config/system/backup_migrate
 
 Now we can migrate data by uploading the file we just downloaded to our development environment at the following URL.
 
-Replace `localhost/dev/sand-box` with the correct URL for your dev site
+(Replace `localhost/dev/sand-box` with the correct URL for your dev site)
 
 ```
 http://localhost/dev/sand-box/admin/config/system/backup_migrate/restore
