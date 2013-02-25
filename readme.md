@@ -33,6 +33,13 @@ That's it. Now you have local copy of the `dev branch`. Note that you could chan
 
 #####Creating a local database
 
+If you are using MAMP, and would like to be able use MySQL from the command line, you can easily create symlinks or aliases for common functions. Here is an example of how to make symlinks for 'mysql' and 'mysqladmin'.
+
+<pre>
+sudo ln -s /Applications/MAMP/Library/bin/mysql /bin/mysql
+sudo ln -s /Applications/MAMP/Library/bin/mysqladmin /bin/mysqladmin
+</pre>
+
 Create a local `dev database` with phpMyAdmin or by issuing the following command.
 
 Replace `username` with the username of a local MySQL admin account
