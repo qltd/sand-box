@@ -110,7 +110,7 @@ http://sand-box.qltdclient.com/admin/config/system/backup_migrate
 - Download the backup by clicking the `download` link in the Drupal alert message
 - You can select `Download` instead of `Manual Backups Directory` for the second option, but an abundance of stored backups is never a bad idea
 
-Now we can migrate data by uploading the file we just downloaded to our development environment at the following URL.
+Now we can migrate data by uploading the file we just downloaded to our development environment at the following URL. Make sure that you enable the `Backup and Migrate` module before proceeding -- you will only need to do this once.
 
 (Replace `localhost/dev/sand-box` with the correct URL for your dev site)
 
