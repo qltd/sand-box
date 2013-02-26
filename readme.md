@@ -138,9 +138,12 @@ Pull
 git pull origin dev
 ```
 
-#####Pushing features upstream
+#####Pushing Features Upstream
 
 …
+
+#####Installing a Theme (both sides of the river)
+
 
 ###Additional Considerations
 
