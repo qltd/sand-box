@@ -169,14 +169,39 @@ git commit -m 'comment'
 git push
 ```
 
-#####Pulling Features Upstream
+#####Merging Braches
 
-...
+The following commands should be issued from an up-to-date project folder associated with the `dev branch`. It will update the `test branch` to match the `dev branch`.
+
+```
+git checkout test
+git merge dev
+git checkout dev
+```
+
+#####Pulling Into Upstream Environments
+
+The following commands should be issued from project folders associated with upstream environments like the `test branch` and the `live branch`.
+
+(For `test` environment)
+
+```
+git pull origin test
+```
+
+(For `live` environment)
+
+```
+git pull origin live
+```
+
 
 #####Installing a Theme (both sides of the river)
 
 
 ###Additional Considerations
+
+- `git status` is an extremely valuable command that should be executed as often as possible.
 
 - Global Admin Account Information
 
