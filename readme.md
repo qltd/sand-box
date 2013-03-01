@@ -134,13 +134,44 @@ If there are additional files associated with the content that is being migrated
 
 Pull
 
+(From the project's root folder)
+
 ```
 git pull origin dev
 ```
 
+Note that `dev` could be replaced with any active branch.
+
+
 #####Pushing Features Upstream
 
-…
+After you've created or modified a feature you should move it to your site's modules folder, and enable it if it isn't already enabled. This should be happening exclusively in the dev environment.
+
+Next, make sure you are working on the right branch.
+
+```
+git status
+```
+
+If you aren't on the `dev branch` you should change to that now.
+
+```
+git checkout dev
+```
+
+Now we will push our code to the repository.
+
+(Replace `comment` with a descriptive comment about the feature(s) you are adding)
+
+```
+git add -A
+git commit -m 'comment'
+git push
+```
+
+#####Pulling Features Upstream
+
+...
 
 #####Installing a Theme (both sides of the river)
 
